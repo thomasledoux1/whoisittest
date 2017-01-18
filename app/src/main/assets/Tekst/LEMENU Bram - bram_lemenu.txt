@@ -1,0 +1,6 @@
+Naam: Lemenu
+Voornaam: Bram
+Hobby: Lopen
+Minst populaire opleidingsonderdeel TIN: iTalent
+Favoriete programmeertaal: Swift
+Leeftijd: 21

@@ -1,0 +1,6 @@
+Naam: Venneman
+Voornaam: Silke
+Hobby: Tennis
+Minst populaire opleidingsonderdeel TIN: Partim Topics
+Favoriete programmeertaal: JAVA
+Leeftijd: 23

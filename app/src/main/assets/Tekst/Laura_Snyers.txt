@@ -1,0 +1,6 @@
+Naam: Snyers
+Voornaam: Laura
+Hobby: Viool spelen, tennis spelen, Wandelen in de bergen
+Minst populaire opleidingsonderdeel TIN: ITalent
+Favoriete programmeertaal: Java
+Leeftijd: 20

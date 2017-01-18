@@ -1,0 +1,7 @@
+Naam: Vandenbussche
+Voornaam: Tom
+Hobby: Games
+Minst populaire opleidingsonderdeel TIN: i?Talent
+Favoriete programmeertaal: Java
+Leeftijd: 25
+

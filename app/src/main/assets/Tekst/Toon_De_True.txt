@@ -1,0 +1,6 @@
+Naam: De True
+Voornaam: De True
+Hobby: Schaken
+Minst populaire opleidingsonderdeel TIN: Italent3
+Favoriete programmeertaal: c#
+Leeftijd: 24

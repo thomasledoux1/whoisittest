@@ -1,0 +1,6 @@
+Naam: Vermaeren
+Voornaam: Remko
+Hobby: Lopen
+Minst populaire opleidingsonderdeel TIN: iTalent 1 (2 en 3)
+Favoriete programmeertaal: Java
+Leeftijd: 21

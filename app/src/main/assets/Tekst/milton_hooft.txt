@@ -1,0 +1,6 @@
+Naam : Hooft
+Voornaam : Milton
+Hobby : Boogschieten, Elektrische gitaar
+Minst populaire opleidingsonderdeel TIN : internationale communicatie
+Favoriete programmeertaal : Java
+Leeftijd : 21

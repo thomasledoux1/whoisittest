@@ -1,0 +1,6 @@
+Naam: Meert
+Voornaam: Dries
+Hobby: Skateboarding en speelplein 
+Minst populaire opleidingsonderdeel TIN: Italent
+Favoriete programmeertaal: Java
+Leeftijd: 25

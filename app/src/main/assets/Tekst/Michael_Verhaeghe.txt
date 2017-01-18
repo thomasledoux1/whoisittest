@@ -1,0 +1,6 @@
+Naam: Verhaeghe
+Voornaam: Michaël
+Hobby: Weerkunde
+Minst populaire opleidingsonderdeel TIN: Financieel Management
+Favoriete programmeertaal: Python
+Leeftijd: 23

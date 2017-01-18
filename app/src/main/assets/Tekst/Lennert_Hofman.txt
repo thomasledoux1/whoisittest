@@ -1,0 +1,6 @@
+Naam: 										Hofman
+Voornaam: 									Lennert
+Hobby:										Badminton
+Minst populaire opleidingsonderdeel TIN: 	I²Talent
+Favoriete Programmeertaal:					Java
+Leeftijd:									19

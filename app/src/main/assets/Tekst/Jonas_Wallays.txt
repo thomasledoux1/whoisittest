@@ -1,0 +1,6 @@
+Naam: Wallays
+Voornaam: Jonas
+Hobby: badminton
+Minst populaire opleidingsonderdeel TIN: Partim Topics
+Favoriete programmeertaal: C#
+Leeftijd: 21

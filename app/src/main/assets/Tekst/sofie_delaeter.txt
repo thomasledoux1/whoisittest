@@ -1,0 +1,7 @@
+* Naam: Delaeter
+* Voornaam: Sofie
+* Hobby: Gamen, Hermes
+* Minst populaire opleidingsonderdeel TIN: bedrijfsmanagement
+* Favoriete programmeertaal: Java
+* Leeftijd: 23
+

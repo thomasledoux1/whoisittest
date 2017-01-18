@@ -1,0 +1,6 @@
+Naam: Noens
+Voornaam: Dennis
+Hobby: fotografie
+Minst populaire opleidingsonderdeel TIN: computernetwerken I
+Favoriete programmeertaal: Java
+Leeftijd: 23

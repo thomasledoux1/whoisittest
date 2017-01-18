@@ -1,0 +1,6 @@
+Naam: Smet
+Voornaam: Mathias
+Hobby: Voetbal
+Minst populaire opleidingsonderdeel TIN: Databanken
+Favoriete programmeertaal: Java
+Leeftijd: 23

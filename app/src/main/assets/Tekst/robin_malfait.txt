@@ -1,0 +1,6 @@
+Naam: malfait
+Voornaam: Robin
+Hobby: Programmeren, Series kijken, Eten
+Minst populaire opleidingsonderdeel TIN: Bedrijfsmanagement
+Favoriete programmeertaal: JavaScript
+Leeftijd: 21

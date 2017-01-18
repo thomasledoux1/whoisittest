@@ -1,0 +1,6 @@
+Naam: Van Meersche
+Voornaam: Maarten
+Hobby: Gamen
+Minst populaire opleidingsonderdeel TIN: ITalent
+Favoriete programmeertaal: Java
+Leeftijd: 19

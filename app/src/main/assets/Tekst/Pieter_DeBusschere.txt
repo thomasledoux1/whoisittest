@@ -1,0 +1,6 @@
+Naam: De Busschere
+Voornaam: Pieter
+Hobby: Muzikant
+Minst populaire opleidingsonderdeel TIN: iTalent-reeksen
+Favoriete programmeertaal: Java
+Leeftijd: 21

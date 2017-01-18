@@ -1,0 +1,6 @@
+Naam : Ledoux
+Voornaam : Thomas
+Hobby : Korfbal
+Minst populaire opleidingsonderdeel TIN : Databanken
+Favoriete programmeertaal : Java
+Leeftijd : 25

@@ -1,0 +1,6 @@
+Naam: Van den Broeck
+Voornaam: Robin
+Hobby: squash, lopen, fietsen
+Minst populaire onderdeel TIN: ITalent
+Favoriete programmeertaal: Sed
+Leeftijd: 22

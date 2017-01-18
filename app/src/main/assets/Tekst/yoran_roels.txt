@@ -1,0 +1,6 @@
+Naam: Roels
+Voornaam: Yoran
+Hobby: Gaming
+Minst populaire opleidingsonderdeel TIN: Internationale Communicatie III - Frans
+Favoriete programmeertaal: Java
+Leeftijd: 20

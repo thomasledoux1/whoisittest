@@ -1,0 +1,6 @@
+Naam: De Puysseleyr
+Voornaam: Pol
+Hobby: Biljarten
+Minst populaire opleidingsonderdeel TIN : Italent
+Favoriete programmeertaal: Java
+Leeftijd: 21

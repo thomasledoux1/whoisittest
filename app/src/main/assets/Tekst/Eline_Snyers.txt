@@ -1,0 +1,6 @@
+Naam: Snyers
+Voornaam: Eline
+Hobby: Tennis
+Minst populaire opleidingsonderdeel TIN: webapplicaties
+Favoriete programmeertaal: Swift
+Leeftijd: 25

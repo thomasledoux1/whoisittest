@@ -1,0 +1,6 @@
+Naam:						Boschmans
+Voornaam:					Joris
+Hobby:						Gitaarspelen
+Minst populaire opleidingsonderdeel TIN:	Financieel Management
+Favoriete programmeertaal:			C#
+Leeftijd:					24 jaar

@@ -1,0 +1,6 @@
+Naam: Van Hecke
+Voornaam: Yannick
+Hobby: Badminton
+Minst populaire opleidingsonderdeel TIN: I2Talent
+Favoriete programmeertaal: C#
+Leeftijd: 23

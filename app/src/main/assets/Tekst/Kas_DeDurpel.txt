@@ -1,0 +1,6 @@
+Naam : De Durpel
+Voornaam : Kas
+Hobby : Volleybal
+Minst populaire OLOD TIN : Computernetwerken
+Favoriete programmeertaal : Java
+Leeftijd : 23

@@ -1,0 +1,6 @@
+Naam:					Leirens
+voornaam: 				Jens
+Hobby: 					Gamen 
+Minst populaire opleidingsonderdeel TIN:BedrijfsManegement	
+Favoriete programmeertaal		Java
+Leeftijd				20

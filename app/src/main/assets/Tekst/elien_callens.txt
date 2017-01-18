@@ -1,0 +1,6 @@
+Naam: Callens
+Voornaam: Elien
+Hobby: Reizen
+Minst populaire opleidingsonderdeel TIN: Computernetwerken I
+Favoriete programmeertaal: Java
+Leeftijd: 24

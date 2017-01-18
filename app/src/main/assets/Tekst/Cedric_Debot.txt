@@ -1,0 +1,6 @@
+Naam : Debot
+Voornaam : Cédric
+Hobby: DJ
+Minst populaire opleidingsonderdeel TIN : Italent
+Favoriete programmeertaal: Swift
+Leeftijd 20
