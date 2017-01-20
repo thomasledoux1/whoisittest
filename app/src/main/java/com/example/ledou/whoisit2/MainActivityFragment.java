@@ -97,7 +97,7 @@ public class MainActivityFragment extends Fragment {
                     dataSource.removePersoonBeschrijving(persoonBeschrijvings.get(viewHolder.getAdapterPosition()));
                     dataSource.close();
                     persoonBeschrijvings.remove(viewHolder.getAdapterPosition());
-
+                    recyclerView.removeViewAt(viewHolder.getAdapterPosition());
 
                     if (!persoonBeschrijvings.isEmpty()){
                         Toast.makeText(rootView.getContext(), "Person "
@@ -108,7 +108,7 @@ public class MainActivityFragment extends Fragment {
                                 + personSwipedName + " removed, this was the last person in the game. Restart if you want to play again.", Toast.LENGTH_LONG).show();
                     }
                 }
-                adapter.notifyItemRemoved(viewHolder.getLayoutPosition());
+                adapter.notifyDataSetChanged();
 
 
             }
@@ -117,6 +117,14 @@ public class MainActivityFragment extends Fragment {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
         return rootView;
+    }
+    public void restartGame(){
+        dataSource.writePersoonBeschrijvingenToDatabase();
+        persoonBeschrijvings = dataSource.getPersoonbeschrijvingen();
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        final MainAdapter adapter = new MainAdapter(persoonBeschrijvings);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

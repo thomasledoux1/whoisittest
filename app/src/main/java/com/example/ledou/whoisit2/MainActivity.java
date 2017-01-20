@@ -16,14 +16,14 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
-    //private Fragment currentFragment;
+    private Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //ButterKnife.bind(this);
-        //currentFragment = getFragmentManager().findFragmentById(R.id.listFragment);
+        ButterKnife.bind(this);
+        currentFragment = getFragmentManager().findFragmentById(R.id.listFragment);
 
     }
 
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         MainAdapter adapter = new MainAdapter(dataSource.getPersoonbeschrijvingen());
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);*/
-        MainActivityFragment fragment = new MainActivityFragment();
+        //MainActivityFragment fragment = new MainActivityFragment();
 
-        //((MainActivityFragment) currentFragment).restartGame();
+        ((MainActivityFragment) currentFragment).restartGame();
     }
 }
