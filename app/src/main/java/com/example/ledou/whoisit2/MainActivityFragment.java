@@ -39,6 +39,8 @@ public class MainActivityFragment extends Fragment {
     @Bind(R.id.recyclerView)
     public RecyclerView recyclerView;
 
+    private PersoonBeschrijvingDataSource dataSource;
+
     private ArrayList<PersoonBeschrijving> persoonBeschrijvings;
 
     private int currentIndex;
@@ -56,8 +58,11 @@ public class MainActivityFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        dp.fillDatabase();
-        loadDataFromDatabase();
+        dataSource = new PersoonBeschrijvingDataSource(this.getContext());
+        dataSource.open();
+        dataSource.writePersoonBeschrijvingenToDatabase();
+        persoonBeschrijvings = dataSource.getPersoonbeschrijvingen();
+        dataSource.close();
         mainOnClickListener = new MainOnclickListener(getContext());
 
     }
@@ -83,18 +88,28 @@ public class MainActivityFragment extends Fragment {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                String personSwipedName = "";
                 //Remove swiped item from list and notify the RecyclerView
                 if(swipeDir==ItemTouchHelper.LEFT)
                 {
+                    personSwipedName = persoonBeschrijvings.get(viewHolder.getAdapterPosition()).getNaam();
+                    dataSource.open();
+                    dataSource.removePersoonBeschrijving(persoonBeschrijvings.get(viewHolder.getAdapterPosition()));
+                    dataSource.close();
                     persoonBeschrijvings.remove(viewHolder.getAdapterPosition());
-                    if(persoonBeschrijvings==null)
-                    {
-                        Toast.makeText(rootView.getContext(), "Out of elements",Toast.LENGTH_LONG).show();
+
+
+                    if (!persoonBeschrijvings.isEmpty()){
+                        Toast.makeText(rootView.getContext(), "Person "
+                                + personSwipedName + " removed", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(rootView.getContext(), "Person "
+                                + personSwipedName + " removed, this was the last person in the game. Restart if you want to play again.", Toast.LENGTH_LONG).show();
                     }
                 }
                 adapter.notifyItemRemoved(viewHolder.getLayoutPosition());
-                Toast.makeText(rootView.getContext(), "Element "
-                        + (viewHolder.getAdapterPosition()) + " removed", Toast.LENGTH_LONG).show();
+
 
             }
         };
@@ -109,26 +124,6 @@ public class MainActivityFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    private void loadDataFromDatabase()
-    {
-        persoonBeschrijvings = new ArrayList<PersoonBeschrijving>();
-        Cursor cursor = dp.query(DatabaseProvider.CONTENT_URI, new String[] {PersoonBeschrijving.PersoonBeschrijvingColumns._ID, PersoonBeschrijving.PersoonBeschrijvingColumns.naam, PersoonBeschrijving.PersoonBeschrijvingColumns.foto, PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving}, null, null, PersoonBeschrijving.PersoonBeschrijvingColumns.DEFAULT_SORT_ORDER);
-        try{
-            while(cursor.moveToNext()){
-                String naam = cursor.getString(cursor.getColumnIndex(PersoonBeschrijving.PersoonBeschrijvingColumns.naam));
-                int foto = Integer.parseInt(cursor.getString(cursor.getColumnIndex(PersoonBeschrijving.PersoonBeschrijvingColumns.foto)));
-                String beschrijving = cursor.getString(cursor.getColumnIndex(PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving));
-                persoonBeschrijvings.add(new PersoonBeschrijving(foto, beschrijving, naam));
-            }
-        }
-        finally{
-            cursor.close();
-        }
-    }
-
-
 
     private class MainOnclickListener implements View.OnClickListener{
 

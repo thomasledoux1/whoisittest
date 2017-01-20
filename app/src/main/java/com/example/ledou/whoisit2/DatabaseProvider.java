@@ -31,6 +31,7 @@ public class DatabaseProvider extends ContentProvider{
     private static final int DATABASE_VERSION =2;
     private static final String PERSOON_TABLE_NAME = "persoon";
 
+    public static final String ID = "_id";
     public static final String NAAM = "naam";
     public static final String FOTO = "foto";
     public static final String BESCHRIJVING = "beschrijving";
@@ -42,7 +43,6 @@ public class DatabaseProvider extends ContentProvider{
     private static final int PERSONEN = 1;
     private static final int PERSOON_ID = 2;
 
-    private static SQLiteDatabase db;
     private static HashMap<String, String> sPersonenProjectionMap;
 
     protected static final UriMatcher sUriMatcher;
@@ -56,15 +56,12 @@ public class DatabaseProvider extends ContentProvider{
         sPersonenProjectionMap.put(PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving, PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving);
         sPersonenProjectionMap.put(PersoonBeschrijving.PersoonBeschrijvingColumns.foto, PersoonBeschrijving.PersoonBeschrijvingColumns.foto);
         sPersonenProjectionMap.put(PersoonBeschrijving.PersoonBeschrijvingColumns.naam, PersoonBeschrijving.PersoonBeschrijvingColumns.naam);
-        sPersonenProjectionMap.put(PersoonBeschrijving.PersoonBeschrijvingColumns.CREATED_DATE, PersoonBeschrijving.PersoonBeschrijvingColumns.CREATED_DATE);
-        sPersonenProjectionMap.put(PersoonBeschrijving.PersoonBeschrijvingColumns.MODIFIED_DATE, PersoonBeschrijving.PersoonBeschrijvingColumns.MODIFIED_DATE);
-
     }
 
 
 
 
-    private static class DatabaseHelper extends SQLiteOpenHelper {
+    public static class DatabaseHelper extends SQLiteOpenHelper {
 
 
         DatabaseHelper(Context context) {
@@ -75,13 +72,25 @@ public class DatabaseProvider extends ContentProvider{
 
         @Override
         public void onCreate(SQLiteDatabase db) {
+            Cursor c = db.rawQuery("SELECT name FROM persoondata WHERE type='table'", null);
+            List<String> tables = new ArrayList<>();
+
+// iterate over the result set, adding every table name to a list
+            while (c.moveToNext()) {
+                tables.add(c.getString(0));
+            }
+
+// call DROP TABLE on every table name
+            for (String table : tables) {
+                String dropQuery = "DROP TABLE IF EXISTS " + table;
+                db.execSQL(dropQuery);
+            }
             db.execSQL("CREATE TABLE " + PERSOON_TABLE_NAME + " ("
-            + PersoonBeschrijving.PersoonBeschrijvingColumns._ID + " INTEGER PRIMARY KEY,"
+            + PersoonBeschrijving.PersoonBeschrijvingColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + PersoonBeschrijving.PersoonBeschrijvingColumns.foto + " INTEGER,"
             + PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving + " TEXT,"
-            + PersoonBeschrijving.PersoonBeschrijvingColumns.naam + " TEXT,"
-            + PersoonBeschrijving.PersoonBeschrijvingColumns.CREATED_DATE + " INTEGER,"
-            + PersoonBeschrijving.PersoonBeschrijvingColumns.MODIFIED_DATE + " INTEGER" + ");");
+            + PersoonBeschrijving.PersoonBeschrijvingColumns.naam + " TEXT"
+            + ");");
         }
 
         @Override
@@ -101,8 +110,8 @@ public class DatabaseProvider extends ContentProvider{
     @Override
     public boolean onCreate() {
         mOpenHelper = new DatabaseHelper(getContext());
-        db = mOpenHelper.getWritableDatabase();
-        return (db==null)?false:true;
+
+        return false;
     }
 
     @Override
@@ -132,7 +141,7 @@ public class DatabaseProvider extends ContentProvider{
             orderBy = sortOrder;
         }
 
-        SQLiteDatabase db = mOpenHelper.getReadableDatabase();
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         Cursor c = qb.query(db, projection, selection, selectionArgs, null,null, orderBy);
         c.setNotificationUri(getContext().getContentResolver(), uri);
         return c;
@@ -157,6 +166,7 @@ public class DatabaseProvider extends ContentProvider{
         {
             throw new IllegalArgumentException("Unknown URI " + uri);
         }
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 
         ContentValues values;
         if(initialValues!=null)
@@ -168,17 +178,8 @@ public class DatabaseProvider extends ContentProvider{
         }
         Long now = Long.valueOf(System.currentTimeMillis());
 
-        if(values.containsKey(PersoonBeschrijving.PersoonBeschrijvingColumns.CREATED_DATE)==false)
-        {
-            values.put(PersoonBeschrijving.PersoonBeschrijvingColumns.CREATED_DATE, now);
-        }
 
-        if(values.containsKey(PersoonBeschrijving.PersoonBeschrijvingColumns.MODIFIED_DATE)==false)
-        {
-            values.put(PersoonBeschrijving.PersoonBeschrijvingColumns.MODIFIED_DATE, now);
-        }
-
-        if(values.containsKey(PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving)==false)
+        /*if(values.containsKey(PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving)==false)
         {
             Resources r = Resources.getSystem().getSystem();
             values.put(PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving, "Geen beschrijving");
@@ -192,9 +193,9 @@ public class DatabaseProvider extends ContentProvider{
         if(values.containsKey(PersoonBeschrijving.PersoonBeschrijvingColumns.naam) == false)
         {
             values.put(PersoonBeschrijving.PersoonBeschrijvingColumns.naam, "Geen naam");
-        }
-        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-        long rowId = db.insert(PERSOON_TABLE_NAME, PersoonBeschrijving.PersoonBeschrijvingColumns.beschrijving, values);
+        }*/
+
+        long rowId = db.insert(PERSOON_TABLE_NAME, null, values);
         if(rowId>0)
         {
             Uri noteUri = ContentUris.withAppendedId(PersoonBeschrijving.PersoonBeschrijvingColumns.CONTENT_URI, rowId);
@@ -215,8 +216,8 @@ public class DatabaseProvider extends ContentProvider{
                 count = db.delete(PERSOON_TABLE_NAME, where, whereArgs);
                 break;
             case PERSOON_ID :
-                String noteId = uri.getPathSegments().get(1);
-                count = db.delete(PERSOON_TABLE_NAME, PersoonBeschrijving.PersoonBeschrijvingColumns._ID + "=" + noteId
+                String persoonId = uri.getPathSegments().get(1);
+                count = db.delete(PERSOON_TABLE_NAME, PersoonBeschrijving.PersoonBeschrijvingColumns._ID + "=" + persoonId
                 + (!TextUtils.isEmpty(where) ? " AND (" + where + ')' : ""), whereArgs);
                 break;
             default :

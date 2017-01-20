@@ -11,10 +11,11 @@ public final class PersoonBeschrijving {
 
     public static final String AUTHORITY = "com.example.ledou.whoisit2.PersoonBeschrijving";
 
+    private long id;
     private String naam, beschrijving;
     private int foto;
 
-    private PersoonBeschrijving(){}
+    public PersoonBeschrijving(){}
 
     public PersoonBeschrijving(int foto, String beschrijving, String naam)
     {
@@ -35,6 +36,27 @@ public final class PersoonBeschrijving {
         return beschrijving;
     }
 
+    public long getId(){
+        return id;
+    }
+
+    public void setFoto(int foto){
+        this.foto = foto;
+    }
+
+    public void setNaam(String naam){
+        this.naam = naam;
+    }
+
+    public void setBeschrijving(String beschrijving){
+        this.beschrijving = beschrijving;
+    }
+
+    public void setId(long id)
+    {
+        this.id = id;
+    }
+
     public static final class PersoonBeschrijvingColumns implements BaseColumns{
         private PersoonBeschrijvingColumns(){}
 
@@ -49,10 +71,6 @@ public final class PersoonBeschrijving {
 
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.note";
 
-
-        public static final String CREATED_DATE = "created";
-
-        public static final String MODIFIED_DATE = "modified";
     }
 
 

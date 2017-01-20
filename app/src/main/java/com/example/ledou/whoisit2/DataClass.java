@@ -9,8 +9,6 @@ import java.util.List;
 public class DataClass {
 
 
-
-
     public static int[] persoonFoto = {
             R.drawable.alexander_vandamme,
             R.drawable.angelo_lebon,
@@ -101,246 +99,212 @@ public class DataClass {
     };
 
     public static String[] persoonDetails = {
-            "Van Damme\n" +
-                    "Alexander\n" +
-                    "Chicks aantrekken\n" +
-                    "Computernetwerken I\n" +
-                    "Java\n" +
-                    "22",
-            "Naam: Lebon Angelo\n" +
+                    "Hobbies: Chicks aantrekken\n" +
+                    "Minst favoriete vak: Computernetwerken I\n" +
+                    "Favoriete taal: Java\n" +
+                    "Leeftijd: 22 jaar",
+
                     "Hobbies: Watersporten / Lopen\n" +
                     "Minst favoriete vak: Analyse\n" +
                     "Favoriete taal: Java\n" +
                     "Leeftijd: 21 jaar",
-            "Dit is Anthony. Anthony is hier 5 min verwijderd van de 1ste fase van ontkenning van te veel drinken. Vanaf hier ging het alleen maar bergaf voor Anthony.",
-            "Naam : Debot\n" +
-                    "Voornaam : Cédric\n" +
-                    "Hobby: DJ\n" +
-                    "Minst populaire opleidingsonderdeel TIN : Italent\n" +
-                    "Favoriete programmeertaal: Swift\n" +
-                    "Leeftijd 20\n",
-            "Delanoye\n" +
-                    "Dean\n" +
-                    "Voetballen\n" +
-                    "Databanken\n" +
-                    "Swift\n" +
-                    "24jaar\n",
-            "Noens\n" +
-                    "Dennis\n" +
-                    "Fotografie\n" +
-                    "Computernetwerken I\n" +
-                    "Java\n" +
-                    "23 jaar\n",
-            "De Smedt\n" +
-                    "Donovan\n" +
-                    "Tennis\n" +
-                    "iTalent\n" +
-                    "Javascript\n" +
-                    "20 jaar\n",
-            "Meert\n" +
-                    "Dries\n" +
-                    "Skateboarding en speelplein\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "25 jaar\n",
-            "Callens\n" +
-                    "Elien\n" +
-                    "Reizen\n" +
-                    "Computernetwerken I\n" +
-                    "Java\n" +
-                    "24 jaar\n",
-            "Snyers\n" +
-                    "Eline\n" +
-                    "Tennis\n" +
-                    "Webapplicaties\n" +
-                    "Swift\n" +
-                    "25 jaar\n",
-            "Bockstal\n" +
-                    "Jens\n" +
-                    "Gezin, technologie\n" +
-                    "Internationale Communicatie\n" +
-                    "Java\n" +
-                    "31 jaar\n",
-            "Leirens\n" +
-                    "Jens\n" +
-                    "Gamen\n" +
-                    "Bedrijfsmanagement\n" +
-                    "Java\n" +
-                    "20 jaar\n",
-            "Hoste\n" +
-                    "Jeroen\n" +
-                    "Boardgames\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "23 jaar\n",
-            "Wallays\n" +
-                    "Jonas\n" +
-                    "Badminton\n" +
-                    "Partim Topics\n" +
-                    "C#\n" +
-                    "21 jaar\n",
-            "Boschmans\n" +
-                    "Joris\n" +
-                    "Gitaar\n" +
-                    "Financieel Management\n" +
-                    "C#\n" +
-                    "24 jaar\n",
-            "De Durpel\n" +
-                    "Kas\n" +
-                    "Volleybal\n" +
-                    "Computernetwerken\n" +
-                    "Java\n" +
-                    "23 jaar\n",
-            "Snyers\n" +
-                    "Laura\n" +
-                    "Viool, tennis, bergwandelen\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "20 jaar\n",
-            "Lavaert\n" +
-                    "Laurens\n" +
-                    "Programmeren\n" +
-                    "Windows Server\n" +
-                    "Javascript\n" +
-                    "21 jaar\n",
-            "Lemenu\n" +
-                    "Bram\n" +
-                    "Lopen\n" +
-                    "iTalent\n" +
-                    "Swift\n" +
-                    "21 jaar\n",
-            "Hofman\n" +
-                    "Lennert\n" +
-                    "Badminton\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "19 jaar\n",
-            "Van Meersche\n" +
-                    "Maarten\n" +
-                    "Gamen\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "19 jaar\n",
-            "Schoenmakers\n" +
-                    "Manu\n" +
-                    "Gitaar\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "20 jaar\n",
-            "Smet\n" +
-                    "Mathias\n" +
-                    "Voetbal\n" +
-                    "Databanken\n" +
-                    "Java\n" +
-                    "23 jaar\n",
-            "Seghers\n" +
-                    "Matthias\n" +
-                    "Tennis, fitness, lopen\n" +
-                    "iTalent, Topics\n" +
-                    "C#\n" +
-                    "19 jaar\n",
-            "Verhaeghe\n" +
-                    "Michael\n" +
-                    "Weerkunde\n" +
-                    "Financieel Management\n" +
-                    "Python\n" +
-                    "23 jaar\n",
-           "Hooft\n" +
-                    "Milton\n" +
-                    "Boogschieten, elektrische gitaar\n" +
-                    "Internationale Communicatie\n" +
-                    "Java\n" +
-                    "21 jaar\n",
-            "De Busschere\n" +
-                    "Pieter\n" +
-                    "Muziek\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "21 jaar\n",
-            "De Puysseleyr\n" +
-                    "Pol\n" +
-                    "Biljart\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "21 jaar\n",
-            "Vermaeren\n" +
-                    "Remko\n" +
-                    "Lopen\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "21 jaar\n",
-            "Malfait\n" +
-                    "Robin\n" +
-                    "Programmeren, series, eten\n" +
-                    "Bedrijfsmanagement\n" +
-                    "JavaScript\n" +
-                    "21 jaar\n",
-            "Van den Broeck\n" +
-                    "Robin\n" +
-                    "Squash, lopen, fietsen\n" +
-                    "iTalent\n" +
-                    "Sed\n" +
-                    "22 jaar\n",
-            "Venneman\n" +
-                    "Silke\n" +
-                    "Tennis\n" +
-                    "Partim Topics\n" +
-                    "Java\n" +
-                    "23 jaar\n",
-            "Delaeter\n" +
-                    "Sofie\n" +
-                    "Gamen, Hermes\n" +
-                    "Bedrijfsmanagement\n" +
-                    "Java\n" +
-                    "23 jaar\n",
-            "De Plus\n" +
-                    "Sofie\n" +
-                    "Voetbal\n" +
-                    "Analyse\n" +
-                    "Java\n" +
-                    "21 jaar\n",
-            "Ledoux\n" +
-                    "Thomas\n" +
-                    "Korfbal\n" +
-                    "Databanken\n" +
-                    "Java\n" +
-                    "25 jaar\n",
-            "Lefevre\n" +
-                    "Thomas\n" +
-                    "Piano, vliegen, uitgaan\n" +
-                    "Databanken\n" +
-                    "C#\n" +
-                    "20 jaar\n",
-            "Vandenbussche\n" +
-                    "Tom\n" +
-                    "Games\n" +
-                    "iTalent\n" +
-                    "Java\n" +
-                    "25 jaar\n",
-            "De True\n" +
-                    "Toon\n" +
-                    "Schaken\n" +
-                    "iTalent\n" +
-                    "C#\n" +
-                    "24 jaar\n",
-            "Berkein\n" +
-                    "Xander\n" +
-                    "Toneel\n" +
-                    "Internationale Communicatie\n" +
-                    "Java\n" +
-                    "22 jaar\n",
-            "Van Hecke\n" +
-                    "Yannick\n" +
-                    "Badminton\n" +
-                    "iTalent\n" +
-                    "C#\n" +
-                    "23 jaar\n",
-            "Roels\n" +
-                    "Joran\n" +
-                    "Gaming\n" +
-                    "Internationale Communicatie\n" +
-                    "Java\n" +
-                    "20 jaar\n"
+
+                    "Hobbies :  ontkenning van te veel drinken\n" +
+                    "Minst favoriete vak : /\n" +
+                    "Favoriete taal : /\n" +
+                    "Leeftijd : /\n",
+
+                    "Hobbies: DJ\n" +
+                    "Minst favoriete vak: Italent\n" +
+                    "Favoriete taal : Swift\n" +
+                    "Leeftijd : 20 jaar\n",
+
+                    "Hobbies: Voetballen\n" +
+                    "Minst favoriete vak: Databanken\n" +
+                    "Favoriete taal : Swift\n" +
+                    "Leeftijd : 24 jaar\n",
+
+                    "Hobbies: Fotografie\n" +
+                    "Minst favoriete vak: Computernetwerken I\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Tennis\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Javascript\n" +
+                    "Leeftijd : 20 jaar\n",
+
+                    "Hobbies: Skateboarding en speelplein\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 25 jaar\n",
+
+                    "Hobbies: Reizen\n" +
+                    "Minst favoriete vak: Computernetwerken I\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 24 jaar\n",
+
+                    "Hobbies: Tennis\n" +
+                    "Minst favoriete vak: Webapplicaties\n" +
+                    "Favoriete taal : Swift\n" +
+                    "Leeftijd : 25 jaar\n",
+
+                    "Hobbies: Gezin, technologie\n" +
+                    "Minst favoriete vak: Internationale Communicatie\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 31 jaar\n",
+
+                    "Hobbies: Gamen\n" +
+                    "Minst favoriete vak: Bedrijfsmanagement\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 20 jaar\n",
+
+                    "Hobbies: Boardgames\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Badminton\n" +
+                    "Minst favoriete vak: Partim Topics\n" +
+                    "Favoriete taal : C#\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Gitaar\n" +
+                    "Minst favoriete vak: Financieel Management\n" +
+                    "Favoriete taal : C#\n" +
+                    "Leeftijd : 24 jaar\n",
+
+
+                    "Hobbies: Volleybal\n" +
+                    "Minst favoriete vak: Computernetwerken\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Viool, tennis, bergwandelen\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 20 jaar\n",
+
+                    "Hobbies: Programmeren\n" +
+                    "Minst favoriete vak: Windows Server\n" +
+                    "Favoriete taal : Javascript\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Lopen\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Swift\n" +
+                    "Leeftijd : 21 jaar\n",
+
+
+                    "Hobbies: Badminton\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 19 jaar\n",
+
+                    "Hobbies: Gamen\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 19 jaar\n",
+
+                    "Hobbies: Gitaar\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 20 jaar\n",
+
+                    "Hobbies: Voetbal\n" +
+                    "Minst favoriete vak: Databanken\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Tennis, fitness, lopen\n" +
+                    "Minst favoriete vak: iTalent, Topics\n" +
+                    "Favoriete taal : C#\n" +
+                    "Leeftijd : 19 jaar\n",
+
+                    "Hobbies: Weerkunde\n" +
+                    "Minst favoriete vak: Financieel Management\n" +
+                    "Favoriete taal : Python\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Boogschieten, elektrische gitaar\n" +
+                    "Minst favoriete vak: Internationale Communicatie\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Muziek\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Biljart\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Lopen\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Programmeren, series, eten\n" +
+                    "Minst favoriete vak: Bedrijfsmanagement\n" +
+                    "Favoriete taal : JavaScript\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Squash, lopen, fietsen\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Sed\n" +
+                    "Leeftijd : 22 jaar\n",
+
+                    "Hobbies: Tennis\n" +
+                    "Minst favoriete vak: Partim Topics\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Gamen, Hermes\n" +
+                    "Minst favoriete vak: Bedrijfsmanagement\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Voetbal\n" +
+                    "Minst favoriete vak: Analyse\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 21 jaar\n",
+
+                    "Hobbies: Korfbal\n" +
+                    "Minst favoriete vak: Databanken\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 25 jaar\n",
+
+                    "Hobbies: Piano, vliegen, uitgaan\n" +
+                    "Minst favoriete vak: Databanken\n" +
+                    "Favoriete taal : C#\n" +
+                    "Leeftijd : 20 jaar\n",
+
+                    "Hobbies: Games\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 25 jaar\n",
+
+                    "Hobbies: Schaken\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : C#\n" +
+                    "Leeftijd : 24 jaar\n",
+
+                    "Hobbies: Toneel\n" +
+                    "Minst favoriete vak: Internationale Communicatie\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 22 jaar\n",
+
+                    "Hobbies: Badminton\n" +
+                    "Minst favoriete vak: iTalent\n" +
+                    "Favoriete taal : C#\n" +
+                    "Leeftijd : 23 jaar\n",
+
+                    "Hobbies: Gaming\n" +
+                    "Minst favoriete vak: Internationale Communicatie\n" +
+                    "Favoriete taal : Java\n" +
+                    "Leeftijd : 20 jaar\n"
 
     };
 }
