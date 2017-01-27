@@ -1,6 +1,8 @@
 package com.example.ledou.whoisit2;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +24,13 @@ import butterknife.ButterKnife;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder>{
 
     private ArrayList<PersoonBeschrijving> persoonBeschrijvings;
+    private Activity activity;
 
-    public MainAdapter(ArrayList<PersoonBeschrijving> persoonBeschrijvings)
+
+    public MainAdapter(ArrayList<PersoonBeschrijving> persoonBeschrijvings, Activity activity)
     {
         this.persoonBeschrijvings = persoonBeschrijvings;
+        this.activity = activity;
     }
 
     @Override
@@ -38,11 +43,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     @Override
     public void onBindViewHolder(MainAdapter.MainViewHolder holder, int position) {
         ImageView image = holder.characterImage;
-        TextView name = holder.characterDiscription;
+        TextView name = holder.characterName;
         Context context = holder.characterImage.getContext();
         Picasso.with(context).load(persoonBeschrijvings.get(position).getFoto());
         image.setImageResource(persoonBeschrijvings.get(position).getFoto());
-        name.setText(persoonBeschrijvings.get(position).getBeschrijving());
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+        {
+            name.setText(persoonBeschrijvings.get(position).getNaam() + " (klik voor meer info op de foto)");
+        } else {
+            name.setText(persoonBeschrijvings.get(position).getBeschrijving());
+        }
+
 
     }
 
@@ -51,14 +62,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         return persoonBeschrijvings.size();
     }
 
+
+
     public static class MainViewHolder extends
             RecyclerView.ViewHolder {
 
         @Bind(R.id.card_image)
         public ImageView characterImage;
 
-        @Bind(R.id.card_discription)
-        public TextView characterDiscription;
+        @Bind(R.id.card_name)
+        public TextView characterName;
 
         public MainViewHolder(View v){
             super(v);

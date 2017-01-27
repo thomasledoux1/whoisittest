@@ -3,11 +3,13 @@ package com.example.ledou.whoisit2;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+import java.io.Serializable;
+
 /**
  * Created by ledou on 22/11/2016.
  */
 
-public final class PersoonBeschrijving {
+public final class PersoonBeschrijving implements Serializable{
 
     public static final String AUTHORITY = "com.example.ledou.whoisit2.PersoonBeschrijving";
 
